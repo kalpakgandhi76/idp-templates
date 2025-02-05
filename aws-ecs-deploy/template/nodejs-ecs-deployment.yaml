@@ -16,7 +16,7 @@ spec:
       name:
         title: Name
         type: string
-        description: Unique name of the AnyCompany catalog app
+        description: Unique name of the AnyCompany catalog component
         ui:autofocus: true
         ui:options:
           rows: 5
@@ -102,7 +102,7 @@ spec:
     action: publish:github
     input:
       allowedHosts: [ 'github.com' ]
-      description: This repo is to create a ECS ${{ parameters.ecsclustername }} using Backstage.
+      description: This repo is to create a ECS ${{ parameters.ecsclustername }} using AnyCompany IDP.
       repoUrl: ${{ parameters.repoUrl }} # Ensure this repo already exists
       repoVisibility: public
       defaultBranch: main # Ensure default branch is set to 'main'
@@ -113,7 +113,7 @@ spec:
         actions: write
         contents: write
       collaborators:
-      - user: "Sapireddy555"
+      - user: "kalpakgandhi76" # Replace with the GitHub username of the collaborator
         access: Admin
 
   - id: kube-pr
@@ -153,7 +153,6 @@ spec:
     input:
       repoContentsUrl: ${{steps['publish-temp'].output.repoContentsUrl }}
       catalogInfoPath: '/catalog-info.yaml'
-
   # Output links are displayed to the user after the template execution
   output:
     links:
