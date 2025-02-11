@@ -127,10 +127,10 @@ spec:
         This repo is to create a ECS. ${{ steps.changed-files.outputs.fileList }}
       targetBranch: main
       reviewers:
-      - prayankag # Replace with the GitHub username of the reviewer
+      - "kalpakgandhi76" # Replace with the GitHub username of the reviewer
       autoApprove: true # Automatically approve the PR
 
-  # Triggering GitHub Actions to create webapp resources
+  # Triggering GitHub Actions to create application resources
   - id: github-action
     name: Starting GitHub Action
     action: github:actions:dispatch
